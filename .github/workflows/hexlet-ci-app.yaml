@@ -6,13 +6,14 @@ jobs:
 
   build:
     runs-on: ubuntu-22.04
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-        node-version: '18.x'
-        cache: 'npm'
+          node-version: '18.x'
+          cache: 'npm'
       - run: make setup
-      - run: make test
       - run: make lint
+      - run: make test
       - uses: hexlet-components/hello-from-hexlet-action@release
