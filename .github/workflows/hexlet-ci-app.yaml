@@ -1,14 +1,19 @@
 name: hexlet-ci-app
+
 on: push
+
 jobs:
+
   build:
     runs-on: ubuntu-latest
+
     steps:
-      -uses: actions/checkout@v4
-      -uses: actions/setup-node@v4
-      with:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
         node-version: 18
         cache: 'npm'
-      -run: make setup
-      -run: make test
-      -run: make lint
+      - run: make setup
+      - run: make test
+      - run: make lint
+      - uses: hexlet-components/hello-from-hexlet-action@release
